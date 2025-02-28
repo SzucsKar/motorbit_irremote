@@ -1,4 +1,5 @@
 EM_IR.OnPressEvent(function (message) {
+    basic.showNumber(message)
     if (message == 69) {
         basic.showString("A")
     } else if (message == 70) {
@@ -63,4 +64,9 @@ EM_IR.OnPressEvent(function (message) {
         basic.showString("9")
     }
 })
+radio.onReceivedString(function (receivedString) {
+    basic.showString(receivedString)
+})
+basic.showString("IR DEMO")
 EM_IR.IrRemote_init(IrPins.P5)
+radio.setGroup(1)
